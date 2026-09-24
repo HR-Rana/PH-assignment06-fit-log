@@ -59,14 +59,14 @@ export default function NavBar() {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button className="btn">
-                        Inbox <div className="badge badge-sm">+99</div>
-                    </button>
+                <div className="navbar-end gap-5">
+                    <span className="cursor-pointer">
+                        Plan <div className="badge badge-sm p-2 rounded-full border-[{1px}] bg-lime-400 font-bold text-black  border-gray-700">0</div>
+                    </span>
 
-                    <button className="btn">
-                        Inbox <div className="badge badge-sm badge-secondary">+99</div>
-                    </button>
+                    <span className="cursor-pointer">
+                        Sved <div className="badge badge-sm p-2 rounded-full border-[{1px}]  border-gray-700 ">0</div>
+                    </span>
                 </div>
             </div>
         </div>
