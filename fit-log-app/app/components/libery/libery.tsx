@@ -1,6 +1,7 @@
 import { DataPromise } from '@/app/page'
 import React from 'react'
 import WorkoutCard from '../workoutCard/workoutCard';
+import Link from 'next/link';
 
 export default async function Libery() {
 
@@ -17,8 +18,11 @@ export default async function Libery() {
             <div className="grid grid-cols-3 gap-6">
                 {
                     data.map((items: IDatatype, i: number) => {
+                        console.log(items)
                         return (
-                            <WorkoutCard data={items} key={i} />
+                            <Link href={`/fit-log/${items.id}`} key={items.id}>
+                                <WorkoutCard data={items} />
+                            </Link>
                         )
                     })
                 }

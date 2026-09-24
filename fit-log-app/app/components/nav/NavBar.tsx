@@ -41,7 +41,10 @@ export default function NavBar() {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <Link href={'/'} className="btn btn-ghost flex items-center gap-6 text-xl max-w-full">
+                        <Image src={logo} width={35} height={30} alt='fit-log' />
+                        <h3 className='text-white uppercase font-semibold'>FitLog</h3>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
