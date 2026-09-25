@@ -17,7 +17,7 @@ export default function NavBar() {
         {
 
             name: "workout",
-            path: "/workout"
+            path: "/"
         },
         {
             name: "my plan",

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import TodaysPlanTabs from '../components/planCardContainer/planTabs/todaysPlan'
 import PlanCardDisplayContainer from '../components/planCardContainer/PlanCardDisplayContainer'
 import { DataPromise } from '../page'
@@ -13,13 +13,11 @@ export default function MyPlanPage() {
     const allPlanData = [...todaysPlan, ...save]
 
 
+    const [tabs, setTabs] = useState(true);
 
-    const TotalMinutes = allPlanData.reduce((total: number, items: IDatatype) => total + items.duration, 0)
-    const totalChalories = allPlanData.reduce((total, data) => total + data.caloriesBurned, 0)
-
-
-
-
+    const displayData = tabs ? todaysPlan : save;
+    const TotalMinutes = displayData.reduce((total: number, items: IDatatype) => total + items.duration, 0)
+    const totalChalories = displayData.reduce((total, data) => total + data.caloriesBurned, 0)
 
 
 
@@ -35,7 +33,7 @@ export default function MyPlanPage() {
             <div className="plan-heading [&>div>h4]:text-lime-300 [&>div>h4]:text-3xl [&>div>h4]:font-semibold [&>div>h4]:mt-2  [&>h4]:p-1 flex justify-between my-7 bg-gray-900 py-10 rounded-3xl px-10">
                 <div className="">
                     <p>Exercises</p>
-                    <h4 >{allPlanData.length}</h4>
+                    <h4 >{displayData.length}</h4>
                 </div>
                 <div>
                     <p>Minutes</p>
@@ -47,7 +45,8 @@ export default function MyPlanPage() {
                 </div>
             </div>
             <div className="plan-tabs-container">
-                <PlanCardDisplayContainer />
+                <PlanCardDisplayContainer tabs={tabs}
+                    setTabs={setTabs} />
             </div>
         </div>
     )
