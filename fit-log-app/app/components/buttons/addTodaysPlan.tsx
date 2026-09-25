@@ -3,30 +3,28 @@
 import { DataContextProvider } from '@/app/Context/DataContext';
 import React, { useContext } from 'react'
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 export default function AddTodaysPlan({ data }: { data: IDatatype }) {
 
     const { todaysPlan, setTodaysPlan } = useContext(DataContextProvider);
-    console.log(todaysPlan)
-    if (!todaysPlan) {
-        throw new Error(
-            "AddTodaysPlan must be used inside DataContextProvider"
-        );
-    }
+
+
 
     const handleTodaysPlan = () => {
+        const alreadyAdded = todaysPlan.some(
+            (items: IDatatype) => items.id === data.id
+        );
 
-        const allReadyAdded = todaysPlan.length > 0 ? todaysPlan.find((items: IDatatype) => items.id === data.id) : null;
-
-        if (allReadyAdded) {
-
-            alert("this data is already added")
-            return
+        if (alreadyAdded) {
+            toast.warning(`${data.name} is already added`);
+            return;
         }
 
+        setTodaysPlan((prev) => [...prev, data]);
 
-        setTodaysPlan([...todaysPlan, data])
-    }
+        toast.success(`${data.name} is added to Today's Plan`);
+    };
 
 
     return (

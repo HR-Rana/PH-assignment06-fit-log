@@ -15,7 +15,7 @@ export default async function Libery() {
                 <p>Twelve lifts covering every major muscle group.</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 px-2 py-3 md:p-0 md:grid-cols-3 gap-6">
                 {
                     data.map((items: IDatatype, i: number) => {
                         return (

@@ -17,6 +17,17 @@ export interface DataContextType {
 export const DataContextProvider =
     createContext<DataContextType | null>(null);
 
+
+
+
+
+
+
+
+
+
+
+
 export default function DataContext({
     children,
 }: {
@@ -25,6 +36,10 @@ export default function DataContext({
     const [todaysPlan, setTodaysPlan] = useState<IDatatype[]>([]);
     const [save, setSave] = useState<IDatatype[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
+
+
+
+
 
     // Load data from localStorage
     useEffect(() => {

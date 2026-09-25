@@ -5,8 +5,8 @@ import Image from 'next/image'
 export default function Hero() {
     return (
         <div className='w-full py-10! px-15 bg-gray-900 rounded-4xl'>
-            <div className="flex justify-between items-center">
-                <div className="left-text flex flex-col text-left! justify-start! w-[55%] ">
+            <div className="block  md:flex justify-between items-center">
+                <div className="left-text flex flex-col text-left! justify-start! w-full lg:w-[55%] ">
                     <p className='text-lime-400'>WORKOUT LIBRARY</p>
                     <h2 className='text-6xl my-4 font-bold'>TRAIN WITH INTENT. LOG
                         EVERY SET.</h2>
