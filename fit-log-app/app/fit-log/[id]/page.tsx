@@ -46,7 +46,7 @@ export default async function FitlogDetailsPage({ params }: ParamsProms) {
                                 [&>li]:border-gray-800
                                 [&>li]:px-10
                                 [&>li]:uppercase
-                                [&>li]'>
+                                [&>li]n [&>li:last-child]:border-0'>
                                 <li className=''><span>Equipment</span> <span>{details.equipment}</span></li>
                                 <li className=''><span>Difficulty </span> <span>{details.difficulty}</span></li>
                                 <li className=''><span>duration </span> <span>{details.duration}</span></li>
@@ -58,7 +58,7 @@ export default async function FitlogDetailsPage({ params }: ParamsProms) {
                             </ul>
                         </div>
                         <h5 className='uppercase font-bold mb-3'>Instructions :</h5>
-                        <ul className='leading-10 text-gray-400 pl-3 pt-2'>
+                        <ul className='leading-8 text-gray-400 pl-3 pt-2'>
                             {
                                 details.instructions.map((data: string[], i: number) => {
                                     return (
@@ -68,7 +68,7 @@ export default async function FitlogDetailsPage({ params }: ParamsProms) {
                             }
                         </ul>
                     </div>
-                    <div className="buttons flex gap-5 pt-15 [&>div>button]:rounded-xl w-3xl">
+                    <div className="buttons flex gap-5 pt-10 [&>div>button]:rounded-xl w-3xl">
                         <AddTodaysPlan />
                         <SaveforLater />
                     </div>
