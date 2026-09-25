@@ -18,7 +18,6 @@ export default async function Libery() {
             <div className="grid grid-cols-3 gap-6">
                 {
                     data.map((items: IDatatype, i: number) => {
-                        console.log(items)
                         return (
                             <Link href={`/fit-log/${items.id}`} key={items.id}>
                                 <WorkoutCard data={items} />

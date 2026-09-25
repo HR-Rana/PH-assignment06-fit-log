@@ -6,7 +6,6 @@ import { FaStar } from "react-icons/fa";
 
 
 export default function WorkoutCard({ data }: { data: IDatatype }) {
-    console.log(data)
     return (
         <div className='bg-gray-950 rounded-3xl border-2 border-gray-900'>
             <div className="card-header relative  rounded-t-3xl overflow-hidden w-full">
@@ -34,7 +33,7 @@ export default function WorkoutCard({ data }: { data: IDatatype }) {
                 ))} */}
                     <p className='pb-3 text-gray-400'>{data.equipment}</p>
                 </div>
-                <div className="card-footer border-t-[1px] text-gray-500 border-gray-800 py-5 flex justify-between">
+                <div className="card-footer border-t-[{1}px] text-gray-500 border-gray-800 py-5 flex justify-between">
                     <p className='flex gap-2 items-center'><span><IoTimeSharp /></span> {data.duration}</p>
                     <p className='flex gap-2 items-center'><span><FaFireAlt /></span> {data.caloriesBurned}</p>
                     <p className='flex gap-2 items-center'><span><FaStar /></span> {data.rating}</p>

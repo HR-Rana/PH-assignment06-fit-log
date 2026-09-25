@@ -1,10 +1,16 @@
+
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 import logo from '@/public/assets/logo.png'
+import { DataContextProvider } from '@/app/Context/DataContext'
 
 
 export default function NavBar() {
+    const { save, todaysPlan } = useContext(DataContextProvider);
+
+
 
 
     const NavItems = [
@@ -60,13 +66,13 @@ export default function NavBar() {
                     </ul>
                 </div>
                 <div className="navbar-end gap-5">
-                    <span className="cursor-pointer">
-                        Plan <div className="badge badge-sm p-2 rounded-full border-[{1px}] bg-lime-400 font-bold text-black  border-gray-700">0</div>
-                    </span>
+                    <Link href={"/my-plan"} className="cursor-pointer">
+                        Plan <div className="badge badge-sm p-2 rounded-full border-[{1px}] bg-lime-400 font-bold text-black  border-gray-700">{todaysPlan.length}</div>
+                    </Link>
 
-                    <span className="cursor-pointer">
-                        Sved <div className="badge badge-sm p-2 rounded-full border-[{1px}]  border-gray-700 ">0</div>
-                    </span>
+                    <Link href={'/my-plan'} className="cursor-pointer">
+                        Sved <div className="badge badge-sm p-2 rounded-full border-[{1px}]  border-gray-700 ">{save.length}</div>
+                    </Link>
                 </div>
             </div>
         </div>

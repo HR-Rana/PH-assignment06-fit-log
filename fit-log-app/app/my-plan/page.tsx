@@ -1,4 +1,6 @@
 import React from 'react'
+import TodaysPlanTabs from '../components/planCardContainer/planTabs/todaysPlan'
+import PlanCardDisplayContainer from '../components/planCardContainer/PlanCardDisplayContainer'
 
 export default function MyPlanPage() {
     return (
@@ -21,20 +23,8 @@ export default function MyPlanPage() {
                     <h4 >190</h4>
                 </div>
             </div>
-            <div className="plan-teb-bar flex justify-between">
-                <div className="left-tabs">
-                    <button className='btn'>Today's Plan</button>
-                    <button className='btn'>Saved</button>
-                </div>
-                <div className="right-site-sorting flex gap-3 ">
-                    <p className='mt-2'>Sort by</p>
-                    <details className='[&>option]:my-2 '>
-                        <summary className='px-4 py-2 border-2 border-gray-700 rounded-lg '>Duration</summary>
-                        <option className="cursor-pointer py-2" value="">Minutes</option>
-                        <option className="cursor-pointer py-2" value="">Chalories</option>
-                        <option className="cursor-pointer py-2" value="">Rating</option>
-                    </details>
-                </div>
+            <div className="plan-tabs-container">
+                <PlanCardDisplayContainer />
             </div>
         </div>
     )

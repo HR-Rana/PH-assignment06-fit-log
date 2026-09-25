@@ -13,7 +13,10 @@ export default async function FitlogDetailsPage({ params }: ParamsProms) {
 
     const data = await DataPromise();
     const details = data.find((items: IDatatype) => items.id === Number(id))
-    console.log(details)
+
+
+
+
 
     return (
         <div className='container mx-auto py-15'>
@@ -69,8 +72,8 @@ export default async function FitlogDetailsPage({ params }: ParamsProms) {
                         </ul>
                     </div>
                     <div className="buttons flex gap-5 pt-10 [&>div>button]:rounded-xl w-3xl">
-                        <AddTodaysPlan />
-                        <SaveforLater />
+                        <AddTodaysPlan data={details} />
+                        <SaveforLater data={details} />
                     </div>
                 </div>
             </div>
