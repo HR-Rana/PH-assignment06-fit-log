@@ -18,14 +18,12 @@ export interface DataContextType {
 
 
 
-export const DataContextProvider = createContext<DataContextType | null>(null);
-
-
-
-
-
-
-
+export const DataContextProvider = createContext<DataContextType>({
+    todaysPlan: [],
+    setTodaysPlan: () => { },
+    save: [],
+    setSave: () => { },
+});
 
 
 
