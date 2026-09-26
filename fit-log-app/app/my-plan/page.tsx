@@ -8,16 +8,16 @@ import { DataContextProvider } from '../Context/DataContext';
 
 export default function MyPlanPage() {
 
-    const { save, setSave, todaysPlan, setTodaysPlan } = useContext(DataContextProvider);
+    const { save, setSave, todaysPlan, setTodaysPlan } = useContext(DataContextProvider)!;
 
-    const allPlanData = [...todaysPlan, ...save]
+    // const allPlanData = [...todaysPlan, ...save]
 
 
     const [tabs, setTabs] = useState(true);
 
     const displayData = tabs ? todaysPlan : save;
     const TotalMinutes = displayData.reduce((total: number, items: IDatatype) => total + items.duration, 0)
-    const totalChalories = displayData.reduce((total, data) => total + data.caloriesBurned, 0)
+    const totalChalories = displayData.reduce((total: number, data: IDatatype) => total + data.caloriesBurned, 0)
 
 
 
@@ -27,7 +27,7 @@ export default function MyPlanPage() {
     return (
         <div className='container mx-auto'>
             <div className="title mt-10 leading-7 font-bold">
-                <h3 className='text-3xl text-white uppercase '>MY PLAN</h3>
+                <h3 className='text-[18px] md:text-3xl text-white uppercase '>MY PLAN</h3>
                 <p className='text-gray-500 mt-2'>Cap of five lifts for today. Finish them, then load more.</p>
             </div>
             <div className="plan-heading [&>div>h4]:text-lime-300 [&>div>h4]:text-3xl [&>div>h4]:font-semibold [&>div>h4]:mt-2  [&>h4]:p-1 flex justify-between my-7 bg-gray-900 py-10 rounded-3xl px-10">

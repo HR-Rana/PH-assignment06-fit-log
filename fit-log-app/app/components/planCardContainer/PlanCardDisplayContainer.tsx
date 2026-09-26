@@ -9,7 +9,7 @@ import Link from "next/link";
 
 
 
-export default function PlanCardDisplayContainer({ tabs, setTabs }) {
+export default function PlanCardDisplayContainer({ tabs, setTabs }: { tabs: boolean, setTabs: React.Dispatch<React.SetStateAction<boolean>> }) {
     const context = useContext(DataContextProvider);
 
     if (!context) {
@@ -190,7 +190,7 @@ export default function PlanCardDisplayContainer({ tabs, setTabs }) {
             </div>
 
 
-            {/* ================= CARDS ================= */}
+
             <div className="cards-displays transition-all">
 
                 {sortedData.length > 0 ? (

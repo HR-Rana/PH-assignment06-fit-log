@@ -22,3 +22,14 @@
     --foreground: #ededed;
   }
 }
+
+
+
+
+@layer utilities {
+  .container {
+    width: 95% !important;
+    max-width: none !important;
+    margin: 20px auto !important;
+  }
+}

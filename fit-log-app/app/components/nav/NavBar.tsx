@@ -5,7 +5,7 @@ import Link from 'next/link'
 import React, { useContext } from 'react'
 import logo from '@/public/assets/logo.png'
 import { DataContextProvider } from '@/app/Context/DataContext'
-
+import { FaBars } from "react-icons/fa";
 
 export default function NavBar() {
     const { save, todaysPlan } = useContext(DataContextProvider);
@@ -31,7 +31,7 @@ export default function NavBar() {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <Image src={logo} width={80} height={40} alt='logo'></Image>
+                            <FaBars className='text-xl' />
                         </div>
                         <ul
                             tabIndex={-1}
@@ -39,7 +39,7 @@ export default function NavBar() {
                             {
                                 NavItems.map((items) => {
                                     return (
-                                        <li key={items.name}>
+                                        <li key={items.name} className='text-md leading-6'>
                                             <Link href={items.path} >{items.name}</Link>
                                         </li>
                                     )

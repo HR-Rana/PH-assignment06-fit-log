@@ -7,25 +7,31 @@ import ActionButtons from '../actionButtons/ActionButtons';
 import { DataContextProvider } from '@/app/Context/DataContext';
 import { toast } from 'react-toastify';
 
+import { Dispatch, SetStateAction } from "react";
 
+interface IDataContext {
+    setTodaysPlan: Dispatch<SetStateAction<IDatatype[]>>;
+    setSave: Dispatch<SetStateAction<IDatatype[]>>;
+}
 interface Props {
     data: IDatatype;
     removeFrom: "todaysPlan" | "save";
 }
 
+
 export default function PlanCardItems({ data, removeFrom }: Props) {
 
-    const { setTodaysPlan, setSave } = useContext(DataContextProvider)
+    const { setTodaysPlan, setSave } = useContext(DataContextProvider)!
 
     const handleRemoveItems = (data: IDatatype) => {
         if (removeFrom === "todaysPlan") {
             setTodaysPlan((prev) =>
-                prev.filter((item) => item.id !== data.id)
+                prev.filter((item: IDatatype) => item.id !== data.id)
 
             );
         } else {
             setSave((prev) =>
-                prev.filter((item) => item.id !== data.id)
+                prev.filter((item: IDatatype) => item.id !== data.id)
             );
         }
         toast.success(`${data.name} is Removed`)
@@ -35,7 +41,7 @@ export default function PlanCardItems({ data, removeFrom }: Props) {
         <div className='py-3 px-5 flex justify-between items-center '>
             <div className="left-content flex gap-5 w-[{40}%]">
                 <div className='flex items-center'>
-                    <Image src={data.image} width={150} height={50} alt={data.name} className='object-contain' />
+                    <Image src={data.image} width={150} height={50} alt={data.name} className='object-contain w-[{120px}px] md:w-fit lg:w-fit' />
                 </div>
                 <div className='w-full!'>
                     <h4 className='text-2xl uppercase font-semibold'>{data.name}</h4>

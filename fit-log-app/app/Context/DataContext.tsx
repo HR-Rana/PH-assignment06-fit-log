@@ -7,6 +7,7 @@ import React, {
     useState,
 } from "react";
 
+
 export interface DataContextType {
     todaysPlan: IDatatype[];
     setTodaysPlan: React.Dispatch<React.SetStateAction<IDatatype[]>>;
@@ -14,8 +15,10 @@ export interface DataContextType {
     setSave: React.Dispatch<React.SetStateAction<IDatatype[]>>;
 }
 
-export const DataContextProvider =
-    createContext<DataContextType | null>(null);
+
+
+
+export const DataContextProvider = createContext<DataContextType | null>(null);
 
 
 
