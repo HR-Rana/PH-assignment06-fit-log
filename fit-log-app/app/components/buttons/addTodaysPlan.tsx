@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 export default function AddTodaysPlan({ data }: { data: IDatatype }) {
 
-    const { todaysPlan, setTodaysPlan } = useContext(DataContextProvider);
+    const { todaysPlan, setTodaysPlan } = useContext(DataContextProvider)!;
 
 
 

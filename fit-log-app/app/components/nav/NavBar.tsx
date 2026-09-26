@@ -8,7 +8,7 @@ import { DataContextProvider } from '@/app/Context/DataContext'
 import { FaBars } from "react-icons/fa";
 
 export default function NavBar() {
-    const { save, todaysPlan } = useContext(DataContextProvider);
+    const { save, todaysPlan } = useContext(DataContextProvider)!;
 
 
 

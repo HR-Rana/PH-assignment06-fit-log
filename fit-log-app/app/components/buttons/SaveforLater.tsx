@@ -11,7 +11,7 @@ export default function SaveforLater({
     data: IDatatype;
 
 }) {
-    const { save, setSave } = useContext(DataContextProvider);
+    const { save, setSave } = useContext(DataContextProvider)!;
 
 
     const handleSaveData = () => {
@@ -32,7 +32,7 @@ export default function SaveforLater({
     return (
         <div>
             <button
-                onClick={() => handleSaveData(data)}
+                onClick={() => handleSaveData()}
                 className='btn border-2 py-2 border-gray-700'> <span><FaRegBookmark /></span> Save For Later</button>
         </div>
     )
