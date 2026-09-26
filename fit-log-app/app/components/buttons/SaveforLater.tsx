@@ -6,10 +6,10 @@ import { toast } from 'react-toastify';
 
 export default function SaveforLater({
     data,
-    handleRemoveItems,
+
 }: {
     data: IDatatype;
-    handleRemoveItems: (data: IDatatype) => void;
+
 }) {
     const { save, setSave } = useContext(DataContextProvider);
 

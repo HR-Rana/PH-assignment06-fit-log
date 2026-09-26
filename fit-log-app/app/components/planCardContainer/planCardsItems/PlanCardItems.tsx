@@ -21,7 +21,9 @@ interface Props {
 
 export default function PlanCardItems({ data, removeFrom }: Props) {
 
-    const { setTodaysPlan, setSave } = useContext(DataContextProvider)!
+    const { setTodaysPlan, todaysPlan, save, setSave } = useContext(DataContextProvider)!
+
+
 
     const handleRemoveItems = (data: IDatatype) => {
         if (removeFrom === "todaysPlan") {
@@ -37,8 +39,25 @@ export default function PlanCardItems({ data, removeFrom }: Props) {
         toast.success(`${data.name} is Removed`)
     };
 
+    const handleMarkDown = (data: IDatatype) => {
+        // const markCheck = todaysPlan.find((items) => items.id === data.id)
+        // const saveCheck = save.find((items) => items.id === data.id)
+
+        // if (markCheck) {
+        //     toast.warning(`${data.name} already marked`)
+        //     return
+        // } else if (saveCheck) {
+        //     toast.warning(`${data.name} already marked`)
+        //     return
+        // }
+
+        toast.success(`${data.name} mark as done`)
+    }
+
+
+
     return (
-        <div className='py-3 px-5 flex justify-between items-center '>
+        <div className='py-3 px-5 block  md:flex justify-between items-center '>
             <div className="left-content flex gap-5 w-[{40}%]">
                 <div className='flex items-center'>
                     <Image src={data.image} width={150} height={50} alt={data.name} className='object-contain w-[{120px}px] md:w-fit lg:w-fit' />
@@ -54,8 +73,8 @@ export default function PlanCardItems({ data, removeFrom }: Props) {
                     </div>
                 </div>
             </div>
-            <div className="right-content flex justify-between w-[{45}%]">
-                <ActionButtons data={data} handleRemoveItems={handleRemoveItems} />
+            <div className="right-content my-3 flex justify-between w-[{45}%]">
+                <ActionButtons data={data} handleRemoveItems={handleRemoveItems} handleMarkDown={handleMarkDown} />
             </div>
         </div>
     )

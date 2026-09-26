@@ -39,8 +39,8 @@ export default function NavBar() {
                             {
                                 NavItems.map((items) => {
                                     return (
-                                        <li key={items.name} className='text-md leading-6'>
-                                            <Link href={items.path} >{items.name}</Link>
+                                        <li key={items.name} className='text-md uppercase leading-6'>
+                                            <Link href={items.path} className='capitalize'>{items.name} </Link>
                                         </li>
                                     )
                                 })
@@ -58,7 +58,7 @@ export default function NavBar() {
                             NavItems.map((items) => {
                                 return (
                                     <li key={items.name}>
-                                        <Link href={items.path} >{items.name}</Link>
+                                        <Link href={items.path} className='capitalize'>{items.name}</Link>
                                     </li>
                                 )
                             })
